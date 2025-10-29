@@ -9,6 +9,8 @@ MIRROR = True
 SMOOTHING = 0.45
 PINCH_THRESHOLD = 0.05
 WEBCAM_INDEX = 0
+EDGE_BONUS = 0.1
+UPPER_BONUS = 0.2
 
 pyautogui.FAILSAFE = False
 pyautogui.PAUSE = 0
@@ -71,8 +73,10 @@ try:
             d = norm_dist(thumb_norm, index_norm)
             pinch = d < PINCH_THRESHOLD
 
-            screen_x = wrist_norm[0] * screen_w
-            screen_y = wrist_norm[1] * screen_h
+            # Scale normalized wrist coordinates to screen coordinates
+            # Expand slightly to allow reaching edges
+            screen_x = min(max((wrist_norm[0] - EDGE_BONUS) / (1-(2*EDGE_BONUS)) * screen_w, 0), screen_w - 1)
+            screen_y = min(max((wrist_norm[1] - EDGE_BONUS - UPPER_BONUS) / (1-(2*EDGE_BONUS)-UPPER_BONUS) * screen_h, 0), screen_h - 1)
 
             # Exponential moving average smoothing
             if smoothed_x is None:
