@@ -22,7 +22,7 @@ Unlike basic implementations, this script features a **Dynamic Calibration Syste
 
 ## Showcase
 
-<img src="https://www.dropbox.com/scl/fi/80pv3cwealz8fxhp7rldj/temp.gif?rlkey=xfzqvnl8qke61bvvmqxndhkbb&st=sqdvb9zp&raw=1" width="500">
+![Demo](https://www.dropbox.com/scl/fi/3o78e2p2qbb8es6dpqf47/demo2.gif?rlkey=zex7as54n2lesw7vkd5n7vid0&st=4qwm9u3o&raw=1)
 
 ---
 
